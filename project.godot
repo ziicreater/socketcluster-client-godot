@@ -1,0 +1,73 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Node",
+"class": "SCAuthEngine",
+"language": "GDScript",
+"path": "res://addons/socketcluster/lib/SCAuthEngine.gd"
+}, {
+"base": "Node",
+"class": "SCClient",
+"language": "GDScript",
+"path": "res://addons/socketcluster/SCClient.gd"
+}, {
+"base": "Node",
+"class": "SCClientSocket",
+"language": "GDScript",
+"path": "res://addons/socketcluster/lib/SCClientSocket.gd"
+}, {
+"base": "Node",
+"class": "SCCodecEngine",
+"language": "GDScript",
+"path": "res://addons/socketcluster/lib/SCCodecEngine.gd"
+}, {
+"base": "Node",
+"class": "SCTransport",
+"language": "GDScript",
+"path": "res://addons/socketcluster/lib/SCTransport.gd"
+}, {
+"base": "Node",
+"class": "dictionary_utils",
+"language": "GDScript",
+"path": "res://addons/socketcluster/lib/utils/dictionary_utils.gd"
+}, {
+"base": "Node",
+"class": "querystring",
+"language": "GDScript",
+"path": "res://addons/socketcluster/lib/utils/querystring.gd"
+}, {
+"base": "Node",
+"class": "uuid",
+"language": "GDScript",
+"path": "res://addons/socketcluster/lib/utils/uuid.gd"
+} ]
+_global_script_class_icons={
+"SCAuthEngine": "",
+"SCClient": "",
+"SCClientSocket": "",
+"SCCodecEngine": "",
+"SCTransport": "",
+"dictionary_utils": "",
+"querystring": "",
+"uuid": ""
+}
+
+[application]
+
+config/name="SocketClusterGodot"
+run/main_scene="res://test.tscn"
+config/icon="res://icon.png"
+
+[rendering]
+
+quality/driver/driver_name="GLES2"
+vram_compression/import_etc=true
+vram_compression/import_etc2=false
