@@ -2,17 +2,25 @@ extends Node
 
 class_name SCAuthEngine
 
+var _token : Dictionary
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+func saveToken(name : String, token : String, options : Dictionary) -> String :
+	_token[name] = token
+	return _token[name]
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func removeToken(name : String) -> String :
+	var token : String = loadToken(name)
+	_token.erase(name)
+	return token
+	
+func loadToken(name : String) -> String :
+	var token : String
+	
+	if _token.has(name) && _token[name].empty():
+		token = _token[name]
+	else:
+		token = String()
+	
+	return token
+	
+	
