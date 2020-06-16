@@ -1,6 +1,6 @@
 extends Node
 
-class_name dictionary_utils
+class_name utils
 
 static func merge(target, source):
 	for key in source:
@@ -18,8 +18,14 @@ static func merge(target, source):
 			target[key] = source[key]
 	return target
 
-static func exists(key, source):
-	if source.has(key) && typeof(source) == TYPE_DICTIONARY:
-		return source[key]
-	else:
-		return null
+static func clearTimeout(timer):
+	timer.stop()
+
+static func setTimeout(timer, time, target, callback):
+	timer = Timer.new()
+	timer.autostart = true
+	timer.wait_time = time
+	timer.one_shot = true
+	timer.connect('timeout', target, callback)
+	target.add_child(timer)
+	return timer
